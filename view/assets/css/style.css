@@ -1,0 +1,232 @@
+.container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+    .btn-outline-success {
+    color: #ffffff;
+    border-color: #ffffff;
+    }
+    .bg-dark {
+    background-color: #3ECBBE!important;
+    }
+    .btn-outline-success:hover {
+    background-color: #138884;
+    outline-color: #138884;
+    border-color: #138884;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255);
+    }
+    .nav-link:hover {
+    color: rgba(255,255,255,.5);
+    }
+    .navbar-nav .nav-link.active {
+    color: rgba(255,255,255,.2);
+    }
+    .footer {
+    color: #495057 ;
+    font-style: italic;
+    
+    }
+    .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #138884;
+    border-color: #138884;
+    }
+    .table-striped>tbody>tr:nth-child(odd)>td, 
+    .table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #3ECBBE55;
+    }
+    .table-striped>tbody>tr:nth-child(even)>td, 
+    .table-striped>tbody>tr:nth-child(even)>th {
+    background-color: #ffffff;
+    }
+    .table-striped>thead>tr>th {
+     background-color: #ffffff;
+    }
+    .miniatura {
+    height: 150px ;
+    width: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    }
+    .bordeCliente {
+    border: 1px solid #3ECBBE
+    }
+    .detalle {
+    font-size: 11px ;
+    color: #495057 ;
+    font-style: italic
+    }
+    .detalleDer {
+    font-size: 11px ;
+    color: #495057 ;
+    font-style: italic;
+    float: right;
+    }
+    .textoCliente {
+    color: #495057 ;
+    font-style: italic
+    }
+    .btn {
+    background-color: #3ECBBE ;
+    border-color: transparent ;
+    color: #ffffff
+    }
+    .bordeBotonNav {
+    border-color: white;
+    }
+    .btn:hover {
+    color: #fff;
+    background-color: #138884;
+    border-color: #138884;
+    }
+    .table-striped tbody tr:nth-of-type(odd) {
+    background-color: transparent ;
+    }
+    .table td {
+    border-top: 0px ;
+    }
+    .botonInfo {
+    color: #3ECBBE  ;
+    background-color: transparent ;
+    }
+    .botonInfo:hover {
+    color: #138884 ;
+    background-color:transparent ;
+    border-color: transparent ;
+    }
+    .btn:active:focus {
+    box-shadow: none!important ;
+    }
+    .btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle {
+    color: #ffffff!important;
+    background-color: #138884;
+    border-color: #138884;
+    }
+    .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #138884;
+    border-color: #13888466;
+    border-top-color: rgb(0, 92, 191);
+    border-right-color: rgb(0, 92, 191);
+    border-bottom-color: rgb(0, 92, 191);
+    border-left-color: rgb(0, 92, 191);
+    }
+    .btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #138884;
+    border-color: #138884;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    box-shadow: 0 0 0 0.2rem #13888466;
+    }
+    .btn:active {
+    background-color: #3ECBBE !important;
+    border-color: transparent !important;
+    }
+    .btn:focus {
+    box-shadow: none ;
+    }
+    .precio {
+    font-weight: bold;
+    }
+    .titulo {
+    font-weight: bold;
+    }
+    
+    .miniatura2 {
+    height: 60px ;
+    width: auto;
+    }
+    .botonElim {
+    color: #3ECBBE;
+    background-color: transparent;
+    border-color:transparent;
+    }
+    .botonElim:hover {
+    color: #cc3f3f;
+    background-color: transparent;
+    border-color:transparent;
+    }
+    .botonElim:active {
+    color: #cc3f3f !important ;
+    background-color: transparent !important ;
+    border-color:transparent !important ;
+    }
+    .botonElim:focus {
+    color: #cc3f3f;
+    background-color: transparent;
+    border-color:transparent;
+    }
+    .headerPedido {
+    background-color: #3ECBBE55;
+    border-bottom: 0px solid #3ECBBE !important;
+    }
+    .tituloPedido {
+    font-size: 20px ;
+    font-weight: bold ;
+    }
+    .barras {
+    border-top: 1px solid #3ECBBE;
+    }
+    .tdCliente {
+    padding: 0.1rem !important;
+    padding-top: 0.1rem !important;
+    padding-right: 0.1rem !important;
+    padding-bottom: 0.1rem !important;
+    padding-left: 0.1rem !important;
+    }
+    .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #ced4da44;
+    }
+    .invisible-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px; /* Tamaño de fuente deseado */
+    cursor: pointer;
+    color: #333; /* Color de texto deseado */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    }
+
+    .invisible-button:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
+    border-radius: 5px; /* Borde redondeado */
+    }
+
+    .invisible-button:focus {
+    outline: none;
+    }
+
+    .tarea-info {
+    font-size: 14px; /* Tamaño de fuente para la información de la tarea */
+    color: #666; /* Color de texto para la información de la tarea */
+    }
+
+    .barras {
+    margin-left: auto; /* Mover a la derecha */
+    margin-right: auto; /* Mover a la izquierda */
+    width: 50%; /* Ancho deseado */
+    }
+    .fixed-button {
+    position: fixed;
+    bottom: 40px; /* Ajusta el valor según la mitad de la altura del botón */
+    right: 20px;
+    z-index: 9999;
+    }
+    .row {
+    margin: 0;
+    }
