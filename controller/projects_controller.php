@@ -13,11 +13,18 @@ echo $_SESSION['userId'];
 //añadir redirección si no se tienen permisos
 
 
-$projects = getCurrentUserProjects($pdo, $userData);
-require_once('../view/projects_view.php');
 
-if ($userData['job']='administrator'){
-    echo $viewUserManagementButton;
+if ($userData['job']=='administrator'){
+    $projects = getAllProjects($pdo);
+    require_once('../view/project_admin_view.php');
+
+}else if ($userData['job']=='coordinator'){
+    $projects = getCurrentUserProjects($pdo, $userData);
+    require_once('../view/projects_view.php');
+
+}else{
+    echo 'No tienes permisos para entrar en esta página';
 }
+
 
 ?>

@@ -14,7 +14,7 @@
                 </button>
                 <br> 
                 <span class="tarea-info">
-                    Name: <?php echo $project['name']; ?> - Description: <?php echo $project['description']?>
+                    Name: <?php echo $project['name']; ?> - Description: <?php echo $project['description']?> - Coordinator: <?php echo $project['coordinatorName']?>
                 </span>
                 <input type="hidden" name="action" value="ver">
                 <hr class="my-4 barras">
