@@ -1,3 +1,4 @@
+<?php $vista='
 
 <form action="login_controller.php" method="POST">
     <label for="username">Nombre de usuario:</label>
@@ -8,3 +9,6 @@
     
     <button type="submit">Iniciar sesión</button>
   </form>
+
+  ';
+?>

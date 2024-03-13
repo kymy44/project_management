@@ -1,12 +1,13 @@
 <?php
 session_start();
-$_SESSION['login']='';
+$_SESSION['login']=''; //inicializa el login vacío
 require_once('../functions/publicFunctions.php');
 require_once('../model/connection.php');
 require_once('../view/templates/header.php');
 require_once('../view/login_view.php');
 require_once('../model/login_model.php');
-
+echo $header;
+echo $vista;//mostramos el contenido html de la vista
 echo isset($_SESSION['loginError']) && $_SESSION['loginError'] ? 'Login incorrecto' : ''; //muestra mensaje de error de login
 
 if (isset($_POST['username'])&&isset($_POST['password'])){

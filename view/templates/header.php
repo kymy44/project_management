@@ -1,3 +1,4 @@
+<?php $header=<<<HTML
 <!DOCTYPE html>
 <html>
 <head><!--
@@ -19,3 +20,6 @@
         </nav>
     </div>
 -->el header funciona <br>
+
+HTML;
+?>

@@ -8,10 +8,20 @@ include('functions/publicFunctions.php');
 //coordinador: gestion de proyectos
 //staff: ver tareas (un usuario staff solo tiene un unico proyecto)
 if (IsAuthenticated()){
-    //echo ' bien '; //aqui se redirige en función del rol
-    //echo $_SESSION['userJob'];
-    //echo $_SESSION['userId'];
-    header ('location: test.php');
+    $userData = getCurrentUserData();
+    switch ($userData['job']){ //redirección en función del rol
+        case 'administrator':
+            header ('location: controller/projects_controller.php');
+        break;
+        case 'coordinator':
+            header ('location: controller/projects_controller.php');
+        break;
+        case 'staff':
+            header ('location: controller/tasks_controller.php');
+        break;
+        default:
+            echo 'Error al recoger el rol del usuario.';
+    }
 }else{
     header('location: controller/login_controller.php');
    }
