@@ -23,3 +23,16 @@
         <?php endforeach; ?>
     </ul>
 </form>
+
+<form action="projects_controller.php" method="post">
+    <label for="name">Nombre del proyecto:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="description">Descripción:</label>
+    <textarea id="description" name="description" required></textarea><br>
+
+    <label for="coordinator_id">ID del coordinador:</label>
+    <input type="number" id="coordinator_id" name="coordinator_id" required><br>
+
+    <input type="submit" name="action" value="create" class="btn btn-primary">
+</form>

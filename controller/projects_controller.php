@@ -10,11 +10,19 @@ require_once('../view/templates/header.php');
 require_once('../model/projects_model.php');
 echo $_SESSION['userJob'];
 echo $_SESSION['userId'];
+$userData=getCurrentUserData();
 //añadir redirección si no se tienen permisos
 
-
+if ($userData['job']=='administrator'||$userData['job']=='coordinator'){
+    if (isset($_POST['action'])&&$_POST['action']=='create'){
+        $newProject = getProjectFormData();
+        createProject($pdo,$newProject);
+        echo 'createPro';
+    }
+}
 
 if ($userData['job']=='administrator'){
+    echo $usersButton;
     $projects = getAllProjects($pdo);
     require_once('../view/project_admin_view.php');
 

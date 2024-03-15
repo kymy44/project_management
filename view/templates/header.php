@@ -22,4 +22,14 @@
 -->el header funciona <br>
 
 HTML;
+$logoutButton =<<<HTML
+<form action="../logout.php" method="POST"> <!--borrar tras movver a la vvista-->
+    <button type="submit" name="logout">Cerrar sesión</button>
+</form>
+HTML;
+$usersButton =<<<HTML
+<form action="../controller/users_controller.php" method="POST"> <!--borrar tras movver a la vvista-->
+    <button type="submit" name="users">Users</button>
+</form>
+HTML;
 ?>
