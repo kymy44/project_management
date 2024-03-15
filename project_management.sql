@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-03-2024 a las 16:29:01
+-- Tiempo de generación: 15-03-2024 a las 17:40:54
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -54,6 +54,19 @@ CREATE TABLE `projects` (
   `coordinator_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `projects`
+--
+
+INSERT INTO `projects` (`id`, `name`, `description`, `coordinator_id`) VALUES
+(1, 'Pro1', 'asdfasdfasdfasdf', 2),
+(2, 'pro22', 'asd', 3),
+(3, 'asdas', 'asdasd', 2),
+(5, 'pro2', 'asdas', 3),
+(10, 'pro22', 'sdfgsdf', 3),
+(11, 'tarea 7', 'asdfasd', 2),
+(13, 'proyectoprueba', 'asdasd', 12);
+
 -- --------------------------------------------------------
 
 --
@@ -68,6 +81,23 @@ CREATE TABLE `tasks` (
   `deadline` date DEFAULT NULL,
   `project_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tasks`
+--
+
+INSERT INTO `tasks` (`id`, `name`, `description`, `start_date`, `deadline`, `project_id`) VALUES
+(1, 'ghk', 'asdghjk', '2024-03-06', '2024-03-26', 1),
+(2, 'tareasdasd', 'asdasdas', '2024-03-05', '2024-03-19', 1),
+(3, 'fghdfgh', 'dfghdfg', '2024-03-29', '2024-03-29', 2),
+(4, 'tarea4', '44444', '2024-03-12', '2024-03-19', 2),
+(5, 'tarea5', '55555', '2024-03-12', '2024-03-12', 2),
+(9, 'Tarea 4', 'Descripción de la tarea 4', '2024-03-20', '2024-03-30', 2),
+(14, 'dfhfgh', 'dfghdfgfh', '2024-03-12', '2024-04-03', 5),
+(17, 'asdf', 'asdf', '2024-03-20', '2024-03-26', 11),
+(18, 'asd', 'sdfgsdf', '2024-03-13', '2024-03-27', 3),
+(19, 'tarea2', 'dfg', '2024-03-22', '2024-03-21', 1),
+(20, 'tareaprueba', 'sdafsdf', '2024-03-07', '2024-03-27', 13);
 
 -- --------------------------------------------------------
 
@@ -84,6 +114,21 @@ CREATE TABLE `users` (
   `password_hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `full_name`, `last_name`, `job_id`, `password_hash`) VALUES
+(1, 'ADMINPRUEBA', 'nombreAdmin', 'ApeAdmin', 3, 'abc123.'),
+(2, 'coordPrueba1', 'nombreCoord1', 'apeCoord1', 1, 'abc123.'),
+(3, 'coordPrueba2', 'nombreCoord2', 'apeCoord2', 1, 'abc123.'),
+(4, 'staffPrueba1', 'nombreStaff1', 'apeStaff1', 2, 'abc123.'),
+(5, 'staffPrueba2', 'nombreStaff1', 'apeStaff2', 2, 'abc123.'),
+(9, 'qwe', 'qwe', 'qwe', 2, '$2y$10$MFqMLW5fvc.WT0RgTHnNmu6sDoS00K6XYm537UyJ/78pUffYHwuje'),
+(11, 'personal', 'Personal', 'Apellido', 2, '123.abc'),
+(12, 'coordinador', 'Coordinador', 'Apellido', 1, '123.abc'),
+(13, 'administrador', 'Administrador', 'Apellido', 3, '123.abc');
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +139,24 @@ CREATE TABLE `users_tasks` (
   `user_id` int(11) NOT NULL,
   `task_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users_tasks`
+--
+
+INSERT INTO `users_tasks` (`user_id`, `task_id`) VALUES
+(4, 5),
+(4, 14),
+(5, 1),
+(5, 2),
+(5, 4),
+(5, 5),
+(5, 14),
+(9, 1),
+(9, 3),
+(9, 14),
+(9, 18),
+(11, 20);
 
 --
 -- Índices para tablas volcadas
@@ -150,19 +213,19 @@ ALTER TABLE `job_positions`
 -- AUTO_INCREMENT de la tabla `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas

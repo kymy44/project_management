@@ -1,6 +1,5 @@
-<h1>User Management</h1>
-<a href="users_controller.php?action=add">Add User</a>
-<table border="1">
+<h1 class="titulo">User Management</h1>
+<table class="table table-striped">
     <tr>
         <th>ID</th>
         <th>Username</th>
@@ -19,44 +18,42 @@
             <td>
               <form action="users_controller.php" method="POST">
                 <input type="hidden" name="userId" value="<?php echo$user['id']?>">
-                <button type="submit" name="action" value="delete">borrar</button>
+                <button type="submit" name="action" value="delete" class="btn btn-danger botonElim">borrar</button>
               </form>
               <form action="users_controller.php" method="POST">
-                <button type="submit" name="action" value="detail">editar</button>
+                <input type="hidden" name="userId" value="<?php echo$user['id']?>">
+                <button type="submit" name="action" value="detail" class="btn btn-primary botonInfo">editar</button>
               </form>
             </td>
         </tr>
     <?php endforeach; ?>
 </table>
 
-
 <form action="users_controller.php" method="POST">
-  <label for="username">Nombre de usuario:</label>
-  <input type="text" id="username" name="username" required><br>
+  <div class="form-group">
+    <label for="username">Nombre de usuario:</label>
+    <input type="text" id="username" name="username" class="form-control" required>
+  </div>
 
-  <label for="fullName">Nombre completo:</label>
-  <input type="text" id="fullName" name="full_name" required><br>
+  <div class="form-group">
+    <label for="fullName">Nombre completo:</label>
+    <input type="text" id="fullName" name="full_name" class="form-control" required>
+  </div>
 
-  <label for="lastName">Apellido:</label>
-  <input type="text" id="lastName" name="last_name" required><br>
+  <div class="form-group">
+    <label for="lastName">Apellido:</label>
+    <input type="text" id="lastName" name="last_name" class="form-control" required>
+  </div>
 
-  <label for="jobId">ID del puesto:</label>
-  <input type="text" id="jobId" name="job_id" required><br>
+  <div class="form-group">
+    <label for="jobId">ID del puesto:</label>
+    <input type="text" id="jobId" name="job_id" class="form-control" required>
+  </div>
 
-  <label for="password">Contraseña:</label>
-  <input type="password" id="password" name="password" required><br>
+  <div class="form-group">
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" class="form-control" required>
+  </div>
 
-  <input type="submit" name="action" value="add">
+  <input type="submit" name="action" value="add" class="btn btn-success">
 </form>
-
-
-
-
-
-<button onclick="goBack()" class="btn btn-secondary">Volver Atrás</button>
-
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>

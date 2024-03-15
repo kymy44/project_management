@@ -202,15 +202,31 @@ function createTask($pdo, $taskDetails, $projectId)
 }
 
 
+function getStaffUsers($pdo) {
+    try {
+        // Preparar la consulta SQL para obtener los usuarios cuyo trabajo es "staff"
+        $sql = "SELECT * FROM users WHERE job_id = (SELECT id FROM job_positions WHERE name = 'staff')";
+        
+        // Preparar y ejecutar la consulta
+        $statement = $pdo->query($sql);
+
+        // Obtener y devolver los resultados
+        $staffUsers = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $staffUsers;
+    } catch (PDOException $e) {
+        // Capturar cualquier excepción y mostrar un mensaje de error
+        echo 'Error al obtener los usuarios: ' . $e->getMessage();
+        return false; // Devolver false en caso de error
+    }
+}
 function getAssignedUsersForTask($pdo, $taskId)
 {
     try {
         // Consulta SQL para obtener los usuarios asignados a la tarea
-        $sql = "SELECT u.id, u.username,
-                       CASE WHEN ut.task_id IS NOT NULL THEN 1 ELSE 0 END AS assigned
+        $sql = "SELECT u.id, u.username
                 FROM users u
-                LEFT JOIN users_tasks ut ON u.id = ut.user_id AND ut.task_id = :taskId
-                WHERE job_id=2"; //esto hará que solo saque el staff
+                INNER JOIN users_tasks ut ON u.id = ut.user_id
+                WHERE ut.task_id = :taskId";
         
         // Preparar y ejecutar la consulta
         $statement = $pdo->prepare($sql);
@@ -227,7 +243,8 @@ function getAssignedUsersForTask($pdo, $taskId)
     }
 }
 
-function updateAssignedUsers($pdo, $taskId, $assignedUsers) {
+
+function assignUsersToTask($pdo, $taskId, $selectedUsers) {
     try {
         // Eliminar todas las asignaciones existentes para esta tarea
         $sqlDelete = "DELETE FROM users_tasks WHERE task_id = :taskId";
@@ -237,7 +254,7 @@ function updateAssignedUsers($pdo, $taskId, $assignedUsers) {
         // Insertar las nuevas asignaciones
         $sqlInsert = "INSERT INTO users_tasks (user_id, task_id) VALUES (:userId, :taskId)";
         $statementInsert = $pdo->prepare($sqlInsert);
-        foreach ($assignedUsers as $userId) {
+        foreach ($selectedUsers as $userId) {
             $statementInsert->execute([':userId' => $userId, ':taskId' => $taskId]);
         }
 
@@ -245,6 +262,20 @@ function updateAssignedUsers($pdo, $taskId, $assignedUsers) {
     } catch (PDOException $e) {
         // Manejar cualquier error de base de datos
         echo 'Error al actualizar las asignaciones: ' . $e->getMessage();
+        return false; // Devolver false si ocurre un error
+    }
+}
+function deleteAssignedUsersForTask($pdo, $taskId) {
+    try {
+        // Eliminar todas las entradas de users_tasks con el taskId dado
+        $sql = "DELETE FROM users_tasks WHERE task_id = :taskId";
+        $statement = $pdo->prepare($sql);
+        $statement->execute([':taskId' => $taskId]);
+
+        return true; // Devolver true si se eliminan las entradas correctamente
+    } catch (PDOException $e) {
+        // Manejar cualquier error de base de datos
+        echo 'Error al eliminar las asignaciones de usuarios para la tarea: ' . $e->getMessage();
         return false; // Devolver false si ocurre un error
     }
 }
