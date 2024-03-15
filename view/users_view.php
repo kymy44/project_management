@@ -22,7 +22,7 @@
                 <button type="submit" name="action" value="delete">borrar</button>
               </form>
               <form action="users_controller.php" method="POST">
-                <button type="submit" name="action" value="update">editar</button>
+                <button type="submit" name="action" value="detail">editar</button>
               </form>
             </td>
         </tr>

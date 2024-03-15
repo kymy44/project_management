@@ -55,9 +55,9 @@ switch ($action) {
         
         break;
     
-    case 'edit':
-        // Editar usuario
-        // Código para editar un usuario existente
+    case 'detail':
+        $userData=
+        include('../view/users_update_view.php');
         break;
     
     case 'delete':
